@@ -245,7 +245,7 @@
     /* Individual Card Styles */
     .slide-card {
       flex: 0 0 100%; 
-      height: 440px;
+      height: 475px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
@@ -258,7 +258,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      padding: 20px;
+      padding: 10px;
       background: white;
     }
 
@@ -271,8 +271,9 @@
     }
     .slide-card img {
       order:2;
+      object-position: center;
       width: 100%;
-      height: 300px;
+      height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
@@ -281,19 +282,23 @@
       order: 3;
       font-size: 1.1rem; 
       font-weight:bold;
-      color: #4c5b5c; }
+      color: #4c5b5c; 
+      padding: 2px 1px 10px} 
+      /* 2 Values: Top/Bottom, Left/Right */
+      /* 3 Values: Top, Left/Right, Bottom */
+      /* 4 Values: Top, Right, Bottom, Left (Clockwise) */
 
     .action-btn {
       order: 4;
       display: inline-block;
-      align-self: flex-start;
-      background-color: #3498db;
-      color: #ffffff;
+      align-self: center;   /* flex-start; */
+      background-color: hsl(149, 72%, 18%);
+      color: #f1e61a;
       text-decoration: none;
-      padding: 8px 18px;
-      font-size: 0.9rem;
+      padding: 15px 26px;
+      font-size: 1.4rem;
       font-weight: bold;
-      border-radius: 6px;
+      border-radius: 10px;
       transition: background-color 0.2s;
     }
     .action-btn:hover { background-color: #2980b9; }
@@ -412,6 +417,37 @@
 }
 .sidebar-box .action-btn:hover { background-color: #1159b7; 
 }
+
+/* horizonal card layou */
+.card-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 350px;
+  height: 200px; /* Standard business card aspect ratio approximation */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the card shape without distortion */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
+}
+
 
     /* 4. Footer Formatting Structure */
     .site-footer {
