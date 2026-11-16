@@ -110,11 +110,12 @@ body {
     /* News Image styling */
       .news_image-container {
             display: flex;       /* Aligns items side by side */
-            gap: 5px;           /* Adds space between the images */
+            gap: 1px;           /* Adds space between the images */
+            padding: 20px;
             align-items: center;
         }
         .news_image-container img {
-            width: 50%;          /* Makes each image take up half the width */
+            width: 100%;          /* Makes each image take up half the width */
             height: auto;        /* Keeps the image proportions intact */
         }
 
