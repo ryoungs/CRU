@@ -1,0 +1,130 @@
+/* Global Layout Engine System Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  font-family: sans-serif; 
+  background: #FAF0E6;  /* #f5f6fa */
+  padding-top: 5px; /* Prevents header overlap */
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+/* Header Main Layout Configuration */
+.site-header {
+  display: grid;
+  /* 3 Columns: Logo size depends on content, Navigation expands to fill room, Right zone adjusts to auto content */
+  grid-template-columns: auto 1fr auto; 
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #FAF0E6;
+  border-bottom: 1px solid #eaeaea;
+  gap: 2rem;
+}
+
+/* Zone 1: Logo Sizing Details */
+.header-logo img {
+  height: 80px; /* Constrains height safely to keep header thin */
+  width: auto;  /* Scales width proportionally */
+  display: block;
+}
+
+/* Zone 2: Main Links Element Positioning 6 max-content, gap: 1.5rem; or 3 1fr*/
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(4, .2fr);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 15px;
+  justify-content: start; /* Flushes links toward the left side, near the logo */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2db96c;
+  font-weight: 900;
+}
+
+/* Zone 3: Right Zone Elements Layout Matrix */
+.header-right-zone {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 6px;
+}
+
+.social-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  text-decoration: none;
+  color: #555;
+  font-size: 1rem;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+  padding: 0.5rem;
+}
+
+.nav-links a:hover,
+.social-grid a:hover,
+.search-btn:hover {
+  color: #0076df;
+}
+
+/* --- Mobile View Transition Logic (Under 768px wide) --- */
+@media (max-width: 768px) {
+  .site-header {
+    grid-template-columns: 1fr; /* Drop columns to stack cleanly down the center */
+    gap: 1.25rem;
+    justify-items: center;
+  }
+
+  .nav-links {
+    grid-template-columns: repeat(3, 1fr); /* Forms the balanced 3x2 matrix link card */
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .header-right-zone {
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1rem;
+  }
+}
+
+    /* News Image styling */
+      .news_image-container {
+            display: flex;       /* Aligns items side by side */
+            gap: 5px;           /* Adds space between the images */
+            align-items: center;
+        }
+        .news_image-container img {
+            width: 50%;          /* Makes each image take up half the width */
+            height: auto;        /* Keeps the image proportions intact */
+        }
+
+    /* 4. Footer Formatting Structure */
+    .site-footer {
+      background: #2c3e50;
+      color: #ffffff;
+      padding: 1px 20px;
+      text-align: center;
+      margin-top: 20px; 
+    }
+    .footer-content h4 { font-size: 1.1rem; margin-bottom: 10px; color: #f1f2f6; }
+    .footer-content p { font-size: 0.9rem; color: #a4b0be; line-height: 1.6; }

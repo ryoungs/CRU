@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Settings ------------------------------------------------------------
 
-  const AUTO_SCROLL_MS = 3500; // time between automatic advances
-  const FADE_MS = 2000;         // crossfade length
+  const AUTO_SCROLL_MS = 10000; // time between automatic advances
+  const FADE_MS = 3000;         // crossfade length
   const SLIDE_MS = 950;        // slide-into-place length
   const SLIDE_PX = 18;         // how far the new cards travel as they settle
   const EASE = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
